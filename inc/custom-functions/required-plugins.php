@@ -9,7 +9,7 @@ function awc_register_required_plugins() {
         array(
             'name'     => 'Alphaweb Blocks', // The name of the plugin
             'slug'     => 'alphaweb-blocks', // The slug of the plugin (from the WordPress.org repository)
-            'source'   => 'https://www.alphawebconsult.com/alphaweb-blocks.zip', // URL to download the plugin
+            'source'   => 'https://github.com/Dapo-Obembe/alphaweb-blocks/archive/refs/heads/main.zip', // URL to download the plugin
             'required' => true,          // If false, the plugin is only recommended
         ),
         array(
