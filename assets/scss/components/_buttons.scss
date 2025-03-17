@@ -1,0 +1,17 @@
+//--------------------------------------------------------------
+// Buttons styles
+//--------------------------------------------------------------
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.primary-button {
+  @include buttonPrimary;
+}
+
+.secondary-button {
+  @include buttonSecondary;
+}
+
+.subscribe-button {
+  @include subscribeBtn;
+}

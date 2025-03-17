@@ -1,0 +1,118 @@
+//--------------------------------------------------------------
+// Header Styles
+//--------------------------------------------------------------
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-header {
+  padding: 12px 0;
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -80px;
+  transition: background 0.35s ease-in-out;
+  z-index: 999;
+
+  @include mobile {
+    padding: 10px 0;
+  }
+
+  &.scrolled {
+    background: $color-black;
+  }
+
+  .admin-bar & {
+    top: 32px;
+
+    @media (max-width: 782px) {
+      top: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__branding {
+    img {
+      width: 40px;
+      height: auto;
+    }
+    a {
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $color-primary;
+      font-size: 20px;
+    }
+  }
+
+  &__navigation {
+    @include mobile {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    li {
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      a {
+        color: $color-white;
+      }
+
+      &.current-menu-item {
+        a {
+          color: $color-secondary;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: $color-primary;
+      transition: color 0.2s ease-in-out;
+
+      &:hover,
+      &:focus {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    .join-us-button {
+      @include mobile {
+        display: none;
+      }
+      a {
+        background-color: $color-accent;
+        color: $color-primary;
+      }
+    }
+  }
+}

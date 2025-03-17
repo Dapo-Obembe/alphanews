@@ -1,0 +1,106 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+//--------------------------------------------------------------
+// Global Defaults/Resets/Overrides
+//--------------------------------------------------------------
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: breakword;
+  word-wrap: break-word;
+}
+
+//-----------------------------------------
+// Html
+//-----------------------------------------
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+//-----------------------------------------
+// Body
+//-----------------------------------------
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  color: $color-text-base;
+  background: $color-white;
+  height: 100%;
+
+  &.menu-open {
+    overflow: hidden;
+  }
+}
+
+//-----------------------------------------
+// Sticky Footer
+//-----------------------------------------
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+//-----------------------------------------
+// Container
+//-----------------------------------------
+.container {
+  @include container;
+}
+
+.text-page-container {
+  @include text-page-container;
+}
+
+//----------------------------------
+// Gutenberg Styles
+//----------------------------------
+.entry-content {
+  /* Default width for non-aligned and centered items */
+  > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
+    @include text-page-container;
+  }
+
+  /* Wide width for items marked with .alignwide */
+  .alignwide {
+    @include container;
+  }
+
+  /* Full width for items marked with .alignfull */
+  .alignfull {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Handling left alignment */
+  .alignleft {
+    float: left;
+    margin-right: 2em;
+  }
+
+  /* Handling right alignment */
+  .alignright {
+    float: right;
+    margin-left: 2em;
+  }
+}
+
+//------------------------------------
+// SWEET ALERT
+//-----------------------------
+.swal2-popup {
+  .swal2-confirm {
+    &.swal2-styled {
+      background-color: $color-primary !important;
+    }
+  }
+}

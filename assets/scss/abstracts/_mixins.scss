@@ -1,0 +1,186 @@
+@use "../abstracts/variables" as *;
+//--------------------------------------------------------------
+// SCSS Mixins
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Breakpoints
+//-----------------------------------------
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+//-----------------------------------------
+// Containers
+//-----------------------------------------
+@mixin container {
+  max-width: $container-max-width;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin text-page-container {
+  max-width: $text-page-max-width;
+  padding-left: $container-padding-x;
+  padding-right: $container-padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+//-----------------------------------------
+// Buttons
+//-----------------------------------------
+@mixin buttonPrimary {
+  background-color: transparent;
+  border-radius: $theme-border-radius;
+  border: none;
+  overflow: hidden;
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 1.25rem;
+    background-color: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+
+    @include mobile {
+      padding: 0.35rem 1.25rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+@mixin buttonSecondary {
+  background-color: transparent;
+  border-radius: $theme-border-radius;
+  border: 1px solid $color-white;
+  overflow: hidden;
+  a {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 1.25rem;
+    background-color: transparent;
+    color: $color-white;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+
+    @include mobile {
+      padding: 0.35rem 1.25rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+@mixin subscribeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 1.25rem;
+  background-color: $color-primary;
+  border: none;
+  border-radius: $theme-border-radius;
+  color: $color-white;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary;
+  }
+}
+
+//----------------------------------
+// PAGE HERO
+//----------------------------------
+@mixin pageHero {
+  min-height: 100vh;
+  padding: 140px 0 0 0;
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(7, 89, 43, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(7, 89, 43, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(7, 89, 43, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#07592b",GradientType=1);
+  color: $color-white;
+
+  border-bottom-left-radius: calc($theme-border-radius * 2);
+  border-bottom-right-radius: calc($theme-border-radius * 2);
+
+  position: sticky;
+  top: 0;
+  z-index: 0;
+}
+
+//-----------------------------------
+// PAGINATION
+//----------------------------------
+@mixin paginationStyle {
+  .pagination-container {
+    height: 60px;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+    .page-numbers {
+      background-color: $color-primary;
+      color: $color-white;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      padding: 0.25rem;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.35s ease-in-out;
+
+      &.current {
+        background-color: $color-secondary;
+      }
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
+}

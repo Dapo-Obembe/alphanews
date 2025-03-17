@@ -1,0 +1,93 @@
+//--------------------------------------------------------------
+// Mobile Nav styles
+//--------------------------------------------------------------
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+  border: 0;
+  width: 44px; // Defining the width of the touch target
+  height: 44px; // Defining the height of the touch target
+  z-index: 10000;
+
+  &--open {
+    .menu-toggle__icon--open {
+      display: none;
+    }
+
+    .menu-toggle__icon--close {
+      display: inline-block;
+    }
+  }
+
+  &:not(.menu-toggle--open) {
+    .menu-toggle__icon--open {
+      display: inline-block;
+      color: $color-white;
+    }
+
+    .menu-toggle__icon--close {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow-y: scroll;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  background-color: $color-white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  box-sizing: border-box;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__menu {
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      &.current-menu-item {
+        a {
+          color: $color-secondary;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      font-size: 20px;
+      padding: 8px 0;
+      text-decoration: none;
+      color: $color-primary;
+      transition: color 0.2s ease-in-out;
+
+      &:hover,
+      &:focus {
+        color: $color-secondary;
+      }
+    }
+  }
+}

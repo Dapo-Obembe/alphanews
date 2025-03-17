@@ -1,0 +1,28 @@
+/*
+Theme Name: ALpha Web Consult
+Author: Alpha Web Consult
+Author URI: https://www.alphawebconsult.com
+Theme URI: https://github.com/Dapo-Obembe/awc-wp-boilerplate.git
+Description: Boilerplate for building Advanced WordPress theme. Made by Alpha Web Consult's team.
+Text Domain: awc-boilerplate
+Requires at least: 6.3
+Requires PHP: 7.4
+Tested up to: 6.6
+Version: 1.0.0
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*-------------------------------------------------------------------------------
+Dear Dev,
+
+Do not add your styles here. Any style added here is loaded across all pages.
+Please use the right file in the assets/scss for theme styling or modifications.
+
+But if the style is for all pages, you may add it here and that's IF you do not
+know how to make changes via local server or FTP.
+
+Happy coding!!!
+
+----------------------------------------------------------------------------------*/
