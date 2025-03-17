@@ -83,5 +83,6 @@ $phone_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fi
 </footer>
 
 <?php wp_footer(); ?>
+<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 </html>
