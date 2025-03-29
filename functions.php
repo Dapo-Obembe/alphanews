@@ -7,6 +7,7 @@
  * @package awc-boilerplate
  * @since 1.0.0
  */
+if(!defined('ABSPATH')) exit;
 
 function include_inc_files() {
 	$files = array(
