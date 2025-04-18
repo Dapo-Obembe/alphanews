@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
  // ACF DATA.
@@ -42,7 +42,7 @@ $phone_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fi
 
 			<!-- Navigation -->
 			 <div class="site-footer__top--middle">
-				<h3><?php echo esc_html__( 'Navigations', 'awc-boilerplate' ); ?></h3>
+				<h3><?php echo esc_html__( 'Navigations', 'swiftpress' ); ?></h3>
 				<nav class="site-footer__navigation" role="navigation">
 					<?php
 						wp_nav_menu(
@@ -58,7 +58,7 @@ $phone_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fi
 			 </div>
 
 			 <div class="site-footer__top--right">
-				<h3><?php echo esc_html__( 'Reach Out', 'awc-boilerplate' ); ?></h3>
+				<h3><?php echo esc_html__( 'Reach Out', 'swiftpress' ); ?></h3>
 				<span>
 					<?php echo $email_icon; ?>
 					<?php if( $reach_out_email ) : ?>

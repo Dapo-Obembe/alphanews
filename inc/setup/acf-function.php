@@ -5,7 +5,7 @@
  * Sets up the Advanced Custom Fields (ACF) plugin related functions.
  * This includes setting up options pages, defining custom fields and related features.
  *
- * @package  awc-boilerplate
+ * @package  swiftpress
  */
 
 /**

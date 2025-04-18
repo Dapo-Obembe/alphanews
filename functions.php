@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package awc-boilerplate
+ * @package swiftpress
  * @since 1.0.0
  */
 if(!defined('ABSPATH')) exit;
@@ -15,6 +15,7 @@ function include_inc_files() {
 		'./inc/filters/', // Load filters and hooks.
 		'./inc/google-recaptcha/', // Google recaptcha functions and filter.
 		'./inc/head-and-footer-codes/', // Add code/tags to <head> and </body>.
+		'./inc/partials/', // Reusable functions for items like buttons, img, etc.
 		'./inc/post-types/', // Custom Post Types registration.
 		'./inc/setup/', // Theme setup files.
 		'./inc/shortcodes/', // Load Shortcodes used in the theme.

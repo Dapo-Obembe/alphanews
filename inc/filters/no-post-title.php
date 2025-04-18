@@ -8,7 +8,7 @@ add_filter(
 	'the_title',
 	function( $title ) {
 		if ( ! is_admin() && empty( $title ) ) {
-			$title = _x( '(No title)', 'Used if posts or pages has no title', 'awc-boilerplate' );
+			$title = _x( '(No title)', 'Used if posts or pages has no title', 'swiftpress' );
 		}
 
 		return $title;

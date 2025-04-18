@@ -2,7 +2,7 @@
 /**
  * This function is intended to defer Js on the pages.
  * 
- * @package awc-boilerplate
+ * @package swiftpress
  * 
  * @author Dapo Obembe
  * 

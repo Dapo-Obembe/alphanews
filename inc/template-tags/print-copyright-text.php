@@ -2,7 +2,7 @@
 /**
  * Echo the copyright text saved in the Advanced Custom Fields options.
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 

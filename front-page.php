@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 get_header();

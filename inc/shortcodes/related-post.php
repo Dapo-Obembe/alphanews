@@ -2,7 +2,7 @@
 /**
  * Related posts shortcode.
  * 
- * @package awc-boilerplate
+ * @package swiftpress
  * @since 1.0.0
  */
 /**

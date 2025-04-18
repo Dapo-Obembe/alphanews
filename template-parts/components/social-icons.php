@@ -4,7 +4,7 @@
  *
  * This template is used for displaying the social icons.
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 // Template data.
@@ -19,7 +19,7 @@ $social_icons = get_field( 'site_social_icons', 'option' );
 
 			<a class="social-icons__item"
 				href="<?php echo esc_url( $item['url'] ); ?>"
-				aria-label="<?php echo esc_attr( ucfirst( $item['network'] ) . ' ' . __( 'Link', 'awc-boilerplate' ) ); ?>"
+				aria-label="<?php echo esc_attr( ucfirst( $item['network'] ) . ' ' . __( 'Link', 'swiftpress' ) ); ?>"
 				target="_blank" rel="noopener">
 				<?php
 				the_svg(

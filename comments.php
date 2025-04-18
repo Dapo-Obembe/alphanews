@@ -6,7 +6,7 @@
  * 
  * The arrange is different from the default WordPress comments template.
  * 
- * @package  awc-boilerplate
+ * @package  swiftpress
  * @author Dapo Obembe
  * @since 1.0.0
  */
@@ -18,7 +18,7 @@
             <?php
             $comment_count = get_comments_number();
             printf(
-                esc_html( _n( '%1$s Comment', '%1$s Comments', $comment_count, ' awc-boilerplate' ) ),
+                esc_html( _n( '%1$s Comment', '%1$s Comments', $comment_count, ' swiftpress' ) ),
                 number_format_i18n( $comment_count )
             );
             ?>
@@ -47,7 +47,7 @@
             if ( comments_open() ) {
                 comment_form();
             }else{
-                echo esc_html_e( 'Comments are closed', ' awc-boilerplate' );
+                echo esc_html_e( 'Comments are closed', ' swiftpress' );
             }
         ?>
     </div>

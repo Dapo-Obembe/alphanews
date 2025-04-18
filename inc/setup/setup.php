@@ -35,9 +35,9 @@ function setup() {
 	// Register navigation menus.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', ' awc-boilerplate' ),
-			'footer'  => esc_html__( 'Footer Menu', ' awc-boilerplate' ),
-			'privacy'  => esc_html__( 'Privacy Menu', ' awc-boilerplate' ),
+			'primary' => esc_html__( 'Primary Menu', ' swiftpress' ),
+			'footer'  => esc_html__( 'Footer Menu', ' swiftpress' ),
+			'privacy'  => esc_html__( 'Privacy Menu', ' swiftpress' ),
 		)
 	);
 
@@ -79,22 +79,22 @@ function setup() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name' => __( 'Small', ' awc-boilerplate' ),
+				'name' => __( 'Small', ' swiftpress' ),
 				'size' => 14,
 				'slug' => 'small',
 			),
 			array(
-				'name' => __( 'Normal', ' awc-boilerplate' ),
+				'name' => __( 'Normal', ' swiftpress' ),
 				'size' => 16,
 				'slug' => 'normal',
 			),
 			array(
-				'name' => __( 'Large', ' awc-boilerplate' ),
+				'name' => __( 'Large', ' swiftpress' ),
 				'size' => 36,
 				'slug' => 'large',
 			),
 			array(
-				'name' => __( 'Huge', ' awc-boilerplate' ),
+				'name' => __( 'Huge', ' swiftpress' ),
 				'size' => 50,
 				'slug' => 'huge',
 			),

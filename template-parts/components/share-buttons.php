@@ -3,7 +3,7 @@
  * Share Buttons Template
  *
  * @param   array $block The block settings and attributes.
- * @package  awc-boilerplate
+ * @package  swiftpress
  * 
  * @author Dapo Obembe
  * 
@@ -15,7 +15,7 @@ $post_link = get_permalink();
 ?>
 <div class="post-share">
 	<div class="post-share__toggle">
-		 <span><?php echo esc_html_e( 'SHARE', ' awc-boilerplate' ); ?></span>
+		 <span><?php echo esc_html_e( 'SHARE', ' swiftpress' ); ?></span>
 	</div>
 	<div class="post-share__buttons">
 		<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank" rel="nofollow noopener noreferrer" class="twitter" title="Share to Twitter">

@@ -2,7 +2,7 @@
 /**
  * Hide the WordPress version for security reason.
  * 
- * @package awc-boilerplate
+ * @package swiftpress
  * 
  * @author Dapo Obembe
  * 

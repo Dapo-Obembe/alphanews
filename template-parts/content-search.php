@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 ?>
@@ -18,7 +18,7 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html_e( 'Read More', 'awc-boilerplate' ); ?></a>
+		<a href="<?php the_permalink(); ?>" class="read-more"><?php echo esc_html_e( 'Read More', 'swiftpress' ); ?></a>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

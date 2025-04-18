@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 
@@ -31,7 +31,7 @@
 
 	<?php wp_body_open(); ?>
 
-	<a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'awc-boilerplate' ); ?></a>
+	<a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'swiftpress' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 

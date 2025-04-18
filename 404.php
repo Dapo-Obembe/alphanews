@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package awc-boilerplate
+ * @package swiftpress
  */
 
 get_header(); ?>
@@ -14,11 +14,11 @@ get_header(); ?>
 		<section class="error-404 not-found">
 
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'awc-boilerplate' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'swiftpress' ); ?></h1>
 			</header>
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'awc-boilerplate' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'swiftpress' ); ?></p>
 
 				<?php get_search_form(); ?>
 

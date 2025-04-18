@@ -2,7 +2,7 @@
 /**
  * Copyright year shortcode.
  * 
- * @package awc-boilerplate
+ * @package swiftpress
  * 
  * @author Dapo Obembe
  */

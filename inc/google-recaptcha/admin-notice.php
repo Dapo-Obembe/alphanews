@@ -34,7 +34,7 @@ add_action('admin_notices', function () {
         $missing_keys_list = implode(', ', $missing_keys);
         echo '<div class="notice notice-error is-dismissible">
             <p>' . sprintf(
-                __('Warning: The following reCAPTCHA keys are missing for %s: %s. Please configure them in recptcha Settings.', ' awc-boilerplate'),
+                __('Warning: The following reCAPTCHA keys are missing for %s: %s. Please configure them in recptcha Settings.', ' swiftpress'),
                 esc_html(strtoupper($selected_version)),
                 esc_html($missing_keys_list)
             ) . '</p>

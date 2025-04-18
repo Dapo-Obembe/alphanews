@@ -7,8 +7,8 @@ add_filter( 'block_categories_all', function( $categories ) {
         $categories,
         [
             [
-                'slug'  => 'awc-boilerplate-blocks',
-                'title' => 'awc-boilerplate Blocks',
+                'slug'  => 'swiftpress-blocks',
+                'title' => 'swiftpress Blocks',
                 'icon'  => null,
             ],
         ]

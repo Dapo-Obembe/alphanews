@@ -2,7 +2,7 @@
 /**
  * Return SVG markup.
  *
- * @package  awc-boilerplate
+ * @package  swiftpress
  */
 
 /**

@@ -37,7 +37,7 @@ function print_numeric_pagination( $args = array(), $query = null ) {
 	}
 	?>
 
-	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', ' awc-boilerplate' ); ?>">
+	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', ' swiftpress' ); ?>">
 		<?php echo paginate_links( $args ); // phpcs:ignore ?>
 	</nav>
 

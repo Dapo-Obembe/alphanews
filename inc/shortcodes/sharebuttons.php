@@ -1,7 +1,7 @@
 <?php
 /**
 * Share buttons.
-* @package awc-boilerplate
+* @package swiftpress
 */
 // Function to generate the social share buttons
 function alpha_web_consult_share_buttons() {
