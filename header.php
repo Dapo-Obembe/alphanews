@@ -64,9 +64,6 @@
 					?>
 				</nav>
 
-				<!-- Header buttons -->
-				 <?php // get_template_part( 'template-parts/components/header-buttons' ); ?>
-
 				<!-- Search Form -->
 				<?php // get_template_part( 'template-parts/components/search-form' ); ?>
 

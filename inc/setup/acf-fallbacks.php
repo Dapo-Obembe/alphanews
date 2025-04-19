@@ -5,7 +5,7 @@
  * This file defines fallback functions for Advanced Custom Fields plugin
  * to prevent fatal errors in case the plugin is deactivated.
  *
- * @package  swiftpress
+ * @package  AlphaWebConsult
  */
 
 // Check if ACF function get_field() exists, if not, define a fallback.

@@ -6,7 +6,7 @@
  * 
  * The arrange is different from the default WordPress comments template.
  * 
- * @package  swiftpress
+ * @package  AlphaWebConsult
  * @author Dapo Obembe
  * @since 1.0.0
  */

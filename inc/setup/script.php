@@ -2,6 +2,9 @@
 /**
  * Theme scripts and styles declarations.
  */
+
+if( !defined( 'ABSPATH' )) exit;
+
 function theme_enqueue_assets() {
     // Check if manifest file exists.
     $manifest_path = get_theme_file_path( '/dist/manifest.json' );
@@ -30,8 +33,8 @@ function theme_enqueue_assets() {
     wp_enqueue_style( 'bootstrap-icons', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css', array(), '1.10.3' );
     
    
-    if ( isset( $manifest['main.css'] ) ) {
-        wp_enqueue_style( 'theme-styles', get_theme_file_uri( $manifest['main.css'] ), array(), $version, 'all' );
+    if ( isset( $manifest['css/main.css'] ) ) {
+        wp_enqueue_style( 'theme-styles', get_theme_file_uri( $manifest['css/main.css'] ), array(), $version, 'all' );
     }
 
     // Theme scripts.
@@ -50,8 +53,8 @@ function theme_enqueue_assets() {
         if ( isset( $manifest['css/home.css'] ) ) {
             wp_enqueue_style( 'home-styles', get_theme_file_uri( $manifest['css/home.css'] ), array(), $version, 'all' );
         }
-        if ( isset( $manifest['pages/home.js'] ) ) {
-            wp_enqueue_script( 'home-scripts', get_theme_file_uri( $manifest['pages/home.js'] ), array(), $version, true );
+        if ( isset( $manifest['js/pages/home.js'] ) ) {
+            wp_enqueue_script( 'home-scripts', get_theme_file_uri( $manifest['js/pages/home.js'] ), array(), $version, true );
         }
     }
     // About page assets.
@@ -66,8 +69,8 @@ function theme_enqueue_assets() {
         if ( isset( $manifest['css/single.css'] ) ) {
             wp_enqueue_style( 'single-styles', get_theme_file_uri( $manifest['css/single.css'] ), array(), $version, 'all' );
         }
-        if ( isset( $manifest['pages/single.js'] ) ) {
-            wp_enqueue_script( 'single-sentry-footercripts', get_theme_file_uri( $manifest['pages/single.js'] ), array(), $version, true );
+        if ( isset( $manifest['js/pages/single.js'] ) ) {
+            wp_enqueue_script( 'single-sentry-footercripts', get_theme_file_uri( $manifest['js/pages/single.js'] ), array(), $version, true );
         }
     }
     
@@ -86,8 +89,8 @@ function theme_enqueue_assets() {
         if ( isset( $manifest['css/contact.css'] ) ) {
             wp_enqueue_style( 'contact-styles', get_theme_file_uri( $manifest['css/contact.css'] ), array(), $version, 'all' );
         }
-        if ( isset( $manifest['pages/contact.js'] ) ) {
-            wp_enqueue_script( 'contact-scripts', get_theme_file_uri( $manifest['pages/contact.js'] ), array(), $version, true );
+        if ( isset( $manifest['js/pages/contact.js'] ) ) {
+            wp_enqueue_script( 'contact-scripts', get_theme_file_uri( $manifest['js/pages/contact.js'] ), array(), $version, true );
         }
     }
 
@@ -142,8 +145,8 @@ function enqueue_recaptcha_settings_script($hook) {
     wp_enqueue_style( 'recaptcha-style', get_theme_file_uri( $manifest['css/recaptcha-settings.css'] ), array(), $version, 'all');
     }
 
-    if ( isset( $manifest['pages/recaptcha-settings.js'] ) ) {
-    wp_enqueue_script( 'recaptcha-scripts', get_theme_file_uri( $manifest['pages/recaptcha-settings.js'] ), array(), $version, true );
+    if ( isset( $manifest['js/pages/recaptcha-settings.js'] ) ) {
+    wp_enqueue_script( 'recaptcha-scripts', get_theme_file_uri( $manifest['js/pages/recaptcha-settings.js'] ), array(), $version, true );
     }
     
 }

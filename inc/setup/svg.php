@@ -2,7 +2,7 @@
 /**
  * Return SVG markup.
  *
- * @package  swiftpress
+ * @package  AlphaWebConsult
  */
 
 /**
@@ -15,7 +15,7 @@
  */
 function include_svg_sprite() {
 	echo '<div class="svg-sprite" style="display: none;">';
-	include_once get_template_directory() . '/assets/sprite.svg';
+	include_once get_template_directory() . '/dist/sprite.svg';
 	echo '</div>';
 }
 add_action( 'wp_footer', 'include_svg_sprite' );

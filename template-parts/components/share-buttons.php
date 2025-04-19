@@ -3,7 +3,7 @@
  * Share Buttons Template
  *
  * @param   array $block The block settings and attributes.
- * @package  swiftpress
+ * @package  AlphaWebConsult
  * 
  * @author Dapo Obembe
  * 

@@ -100,9 +100,10 @@ your-theme-name/
 |-- acf-blocks/             # Custom acf blocks you need (See the Note below this section)
 |-- acf-json/               # Your ACF data stored here in JSON immediately you create them in the backend
 ├── dist/                   # Compiled assets (auto-generated)
-│   ├── css/
-│   ├── js/                 # (pending)
-|   |-- icons/
+│   ├── css/                # Compiled SCSS files
+│   ├── js/                 # Bundled JS files
+│   ├── manifest.json/      # Your assets are arranged in a way to use them
+│   ├── sprite.svg/         # Your svg icons are bundled here
 ├── inc/                    # PHP includes
 │   ├── partials/           # Reusable functions for items like buttons, img, etc
 │   ├── custom-functions/   # Custom functions that act independently of the theme templates
@@ -228,4 +229,5 @@ This project is licensed under the GPL v2 or later.
 ## Contact
 
 For support or inquiries, please contact [obembedapo@gmail.com].
+
 # swiftpress

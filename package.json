@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --mode development --watch",
+    "dev": "webpack --config webpack.config.js --mode development --watch",
     "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dapo Obembe",
   "license": "ISC",
-  "description": "",
+  "description": "Boilerplate for hybrid wordpress theme development.",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
@@ -25,6 +25,7 @@
     "sass-loader": "^16.0.4",
     "stylelint": "^16.12.0",
     "stylelint-scss": "^6.10.0",
+    "svg-spritemap-webpack-plugin": "^4.7.0",
     "terser-webpack-plugin": "^5.3.11",
     "webpack": "^5.97.1",
     "webpack-assets-manifest": "^5.2.1",

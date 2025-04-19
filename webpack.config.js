@@ -5,24 +5,24 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
+const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 
 // Paths
 const jsPagesPath = path.resolve(__dirname, "assets/js/pages");
 const scssPagesPath = path.resolve(__dirname, "assets/scss/pages");
 const acfBlocksPath = path.resolve(__dirname, "acf-blocks");
+const iconsPath = path.resolve(__dirname, "assets/icons");
 
 // Function to generate JS entries for a directory
 const generateJsEntries = (directory) => {
   if (!fs.existsSync(directory)) return {};
 
-  const files = fs
-    .readdirSync(directory)
-    .filter((file) => file.endsWith(".js"));
+  const files = fs.readdirSync(directory).filter((file) => file.endsWith(".js"));
 
   const entries = {};
   files.forEach((file) => {
     const fileName = path.parse(file).name;
-    entries[`pages/${fileName}`] = path.join(directory, file); // Ensure only JS in 'js' folder
+    entries[`js/pages/${fileName}`] = path.join(directory, file);
   });
 
   return entries;
@@ -32,14 +32,12 @@ const generateJsEntries = (directory) => {
 const generateScssEntries = (directory) => {
   if (!fs.existsSync(directory)) return {};
 
-  const files = fs
-    .readdirSync(directory)
-    .filter((file) => file.endsWith(".scss"));
+  const files = fs.readdirSync(directory).filter((file) => file.endsWith(".scss"));
 
   const entries = {};
   files.forEach((file) => {
     const fileName = path.parse(file).name;
-    entries[`css/${fileName}`] = path.join(directory, file); // Ensure only SCSS in 'css' folder
+    entries[`css/${fileName}`] = path.join(directory, file);
   });
 
   return entries;
@@ -68,29 +66,37 @@ const acfBlockEntries = fs
     return entries;
   }, {});
 
+// Main entries for JS and CSS
+const mainEntries = {
+  "js/main": "./assets/js/main.js",
+  "css/main": "./assets/scss/main.scss",
+  "js/admin": "./assets/js/admin.js",
+  "css/admin": "./assets/scss/admin.scss",
+};
+
+// Collect all SCSS-only entries (no corresponding JS file)
+const cssOnlyEntries = Object.keys({
+  ...pageScssEntries,
+  ...acfBlockEntries,
+}).filter((key) => key.startsWith("css/") || key.includes("/style"));
+
 module.exports = {
   entry: {
-    main: ["./assets/scss/main.scss", "./assets/js/main.js"], // Main JS and SCSS entry points
-    admin: ["./assets/scss/admin.scss", "./assets/js/admin.js"], // Admin JS and SCSS entry points
-    ...pageJsEntries, // Add only JS files
-    ...pageScssEntries, // Add only SCSS files
-    ...acfBlockEntries, // ACF block JS and SCSS
+    ...mainEntries,
+    ...pageJsEntries,
+    ...pageScssEntries,
+    ...acfBlockEntries,
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].js", // JS files go into dist/js/
+    filename: "[name].js",
     publicPath: "/dist/",
   },
   module: {
     rules: [
       {
         test: /\.scss$/i,
-        use: [
-          MiniCssExtractPlugin.loader, // Extract SCSS to CSS
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.js$/i,
@@ -104,6 +110,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
+        exclude: /assets\/icons\//,
         type: "asset/resource",
         generator: {
           filename: "images/[name][ext]",
@@ -121,31 +128,44 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: (pathData) => {
-        // Ensure CSS goes to dist/css/ folder
-        if (pathData.chunk.name === "main") {
-          return "css/main.css";
-        }
-        if (pathData.chunk.name === "admin") {
-          return "css/admin.css";
-        }
-
-        // Handle page-specific CSS
-        if (pathData.chunk.name.startsWith("pages/")) {
-          return `css/${pathData.chunk.name.replace("pages/", "")}.css`; // Proper path for pages CSS
-        }
-
-        return "css/[name].css"; // Default case for other CSS files
+      filename: ({ chunk }) => `${chunk.name}.css`,
+    }),
+    new SVGSpritemapPlugin("assets/icons/**/*.svg", {
+      output: {
+        filename: "sprite.svg",
+        svg4everybody: true,
+      },
+      sprite: {
+        prefix: "",
       },
     }),
     new WebpackAssetsManifest({
       output: "manifest.json",
       publicPath: "/dist/",
     }),
+    // Custom plugin to remove JS files for CSS-only entries
+    {
+      apply: (compiler) => {
+        compiler.hooks.emit.tap("RemoveJsForCssOnlyPlugin", (compilation) => {
+          const cssOnly = new Set(cssOnlyEntries); // existing collected entries
+          cssOnly.add("css/main");                 // manually add main
+          cssOnly.add("css/admin");                // manually add admin
+
+          for (const name of cssOnly) {
+            delete compilation.assets[`${name}.js`];
+            delete compilation.assets[`${name}.js.map`];
+            delete compilation.assets[`${name}.js.LICENSE.txt`];
+          }
+        });
+      },
+    },
+
   ],
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    splitChunks: false,
+    runtimeChunk: false,
   },
   devtool: "source-map",
   mode: "production",

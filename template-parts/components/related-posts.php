@@ -2,7 +2,7 @@
 /**
  * Related Posts Template.
  *
- * @package  swiftpress
+ * @package  AlphaWebConsult
  * @author Dapo
  */
 

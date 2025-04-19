@@ -1,3 +1,3 @@
-(function ($) {
-  // Sscripts for homepage live here.
-})(jQuery);
+document.addEventListener("DOMContentLoaded", function () {
+  // Your script for the homepage goes here...
+});

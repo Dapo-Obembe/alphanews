@@ -5,7 +5,7 @@
  * Sets up the Advanced Custom Fields (ACF) plugin related functions.
  * This includes setting up options pages, defining custom fields and related features.
  *
- * @package  swiftpress
+ * @package  AlphaWebConsult
  */
 
 /**
@@ -69,7 +69,7 @@ function register_acf_blocks() {
             if ( file_exists( "$block/style.scss" ) ) {
                 wp_enqueue_style(
                     "acf-{$block_name}-style",
-                    get_template_directory_uri() . "/dist/css/acf-blocks/{$block_name}/style.css",
+                    get_template_directory_uri() . "/dist/acf-blocks/{$block_name}/style.css",
                     array(),
                     '1.0.0'
                 );
@@ -80,7 +80,7 @@ function register_acf_blocks() {
             if ( file_exists( "$block/script.js" ) ) {
                 wp_enqueue_script(
                     "acf-{$block_name}-script",
-                    get_template_directory_uri() . "/dist/js/acf-blocks/{$block_name}/script.js",
+                    get_template_directory_uri() . "/dist/acf-blocks/{$block_name}/script.js",
                     array( 'wp-blocks', 'wp-element', 'wp-editor' ),
                     '1.0.0',
                     true
