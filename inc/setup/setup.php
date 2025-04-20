@@ -35,9 +35,9 @@ function setup() {
 	// Register navigation menus.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', ' swiftpress' ),
-			'footer'  => esc_html__( 'Footer Menu', ' swiftpress' ),
-			'privacy'  => esc_html__( 'Privacy Menu', ' swiftpress' ),
+			'primary' => esc_html__( 'Primary Menu', ' alphanews' ),
+			'footer'  => esc_html__( 'Footer Menu', ' alphanews' ),
+			'privacy'  => esc_html__( 'Privacy Menu', ' alphanews' ),
 		)
 	);
 
@@ -79,22 +79,22 @@ function setup() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name' => __( 'Small', ' swiftpress' ),
+				'name' => __( 'Small', ' alphanews' ),
 				'size' => 14,
 				'slug' => 'small',
 			),
 			array(
-				'name' => __( 'Normal', ' swiftpress' ),
+				'name' => __( 'Normal', ' alphanews' ),
 				'size' => 16,
 				'slug' => 'normal',
 			),
 			array(
-				'name' => __( 'Large', ' swiftpress' ),
+				'name' => __( 'Large', ' alphanews' ),
 				'size' => 36,
 				'slug' => 'large',
 			),
 			array(
-				'name' => __( 'Huge', ' swiftpress' ),
+				'name' => __( 'Huge', ' alphanews' ),
 				'size' => 50,
 				'slug' => 'huge',
 			),

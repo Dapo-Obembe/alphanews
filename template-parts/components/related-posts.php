@@ -36,7 +36,7 @@ if ( $related_cats->have_posts() ) : ?>
     <div class="related-posts">
         <div class="container">
 
-        <h3 class="related-posts__title"><?php esc_html_e( 'Related Posts', 'swiftpress' ); ?></h3>
+        <h3 class="related-posts__title"><?php esc_html_e( 'Related Posts', 'alphanews' ); ?></h3>
         <div class="related-posts__wrapper">
             <?php while ( $related_cats->have_posts() ) : $related_cats->the_post(); ?>
                 <div class="related-posts__wrapper--single">

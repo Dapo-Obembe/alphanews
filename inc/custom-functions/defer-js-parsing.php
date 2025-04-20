@@ -2,7 +2,7 @@
 /**
  * This function is intended to defer Js on the pages.
  * 
- * @package swiftpress
+ * @package AlphaWebConsult
  * 
  * @author Dapo Obembe
  * 

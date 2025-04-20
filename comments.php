@@ -18,7 +18,7 @@
             <?php
             $comment_count = get_comments_number();
             printf(
-                esc_html( _n( '%1$s Comment', '%1$s Comments', $comment_count, ' swiftpress' ) ),
+                esc_html( _n( '%1$s Comment', '%1$s Comments', $comment_count, ' alphanews' ) ),
                 number_format_i18n( $comment_count )
             );
             ?>
@@ -47,7 +47,7 @@
             if ( comments_open() ) {
                 comment_form();
             }else{
-                echo esc_html_e( 'Comments are closed', ' swiftpress' );
+                echo esc_html_e( 'Comments are closed', ' alphanews' );
             }
         ?>
     </div>

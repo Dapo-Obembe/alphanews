@@ -2,7 +2,7 @@
 /**
  * Hide the WordPress version for security reason.
  * 
- * @package swiftpress
+ * @package AlphaWebConsult
  * 
  * @author Dapo Obembe
  * 

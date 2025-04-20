@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * @package swiftpress
+ * @package AlphaWebConsult
  */
 
 ?>
@@ -10,19 +10,19 @@
 <section class="no-results not-found">
 
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'swiftpress' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'alphanews' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php if ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'swiftpress' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'alphanews' ); ?></p>
 
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can’t find what you’re looking for. Perhaps searching can help.', 'swiftpress' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can’t find what you’re looking for. Perhaps searching can help.', 'alphanews' ); ?></p>
 
 			<?php get_search_form(); ?>
 

@@ -4,7 +4,7 @@
  *
  * This template is used for displaying the mobile navigation.
  *
- * @package swiftpress
+ * @package AlphaWebConsult
  * 
  * @author Dapo Obembe
  */
@@ -12,7 +12,7 @@
   $join_us_btn = get_field( 'join_us_button', 'option' );
 ?>
 
-<button class="menu-toggle" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'swiftpress' ); ?>">
+<button class="menu-toggle" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'alphanews' ); ?>">
 	<?php
 	the_svg(
 		array(

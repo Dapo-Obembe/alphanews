@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package swiftpress
+ * @package AlphaWebConsult
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 		<section class="error-404 not-found">
 
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'swiftpress' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'alphanews' ); ?></h1>
 			</header>
 
 			<div class="page-content">

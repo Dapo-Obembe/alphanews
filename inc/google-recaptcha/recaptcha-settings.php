@@ -174,7 +174,7 @@ function sanitize_recaptcha_settings($input) {
 add_action('admin_notices', function () {
     if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
         echo '<div class="notice notice-success is-dismissible">
-            <p>' . __('Settings saved successfully!', ' swiftpress') . '</p>
+            <p>' . __('Settings saved successfully!', ' alphanews') . '</p>
         </div>';
     }
 });

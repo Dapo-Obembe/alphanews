@@ -7,8 +7,8 @@ add_filter( 'block_categories_all', function( $categories ) {
         $categories,
         [
             [
-                'slug'  => 'swiftpress-blocks',
-                'title' => 'swiftpress Blocks',
+                'slug'  => 'alphanews-blocks',
+                'title' => 'alphanews Blocks',
                 'icon'  => null,
             ],
         ]

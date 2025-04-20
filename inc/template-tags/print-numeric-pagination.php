@@ -37,7 +37,7 @@ function print_numeric_pagination( $args = array(), $query = null ) {
 	}
 	?>
 
-	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', ' swiftpress' ); ?>">
+	<nav class="pagination-container" aria-label="<?php esc_attr_e( 'numeric pagination', ' alphanews' ); ?>">
 		<?php echo paginate_links( $args ); // phpcs:ignore ?>
 	</nav>
 

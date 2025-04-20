@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package swiftpress
+ * @package AlphaWebConsult
  * @since 1.0.0
  */
 if(!defined('ABSPATH')) exit;

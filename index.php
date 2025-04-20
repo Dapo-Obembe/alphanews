@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package swiftpress
+ * @package AlphaWebConsult
  */
 
 get_header();

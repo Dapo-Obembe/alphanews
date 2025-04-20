@@ -23,7 +23,7 @@
             <h3><?php echo esc_html( $subscribe_heading ); ?></h3>
           <?php endif; ?>
           <button class="subscribe-button" aria-label="Subscribe">
-            <?php echo esc_html_e( 'Subscribe To Our Blog', 'swiftpress' );  ?>
+            <?php echo esc_html_e( 'Subscribe To Our Blog', 'alphanews' );  ?>
           </button>
         </div>
        
