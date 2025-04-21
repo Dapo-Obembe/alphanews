@@ -4,6 +4,8 @@
  *
  * @since 1.0.0
 */
+if( !defined( 'ABSPATH' )) exit;
+
 add_filter(
 	'excerpt_more',
 	function( $more ) {

@@ -2,6 +2,8 @@
 /**
  * Hook into the admin menu to add a custom settings page.
  */
+if( !defined( 'ABSPATH' )) exit;
+
 add_action('admin_menu', function () {
     add_menu_page(
         'Recaptcha Settings',

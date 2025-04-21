@@ -1,0 +1,125 @@
+//------------------------------
+// BLOCK - HOME HERO STYLES
+//------------------------------
+@use "/assets/scss/abstracts/mixins" as *;
+@use "/assets/scss/abstracts/variables" as *;
+
+.home-hero {
+  min-height: 100vh;
+  width: 100%;
+
+  padding-top: 120px;
+  padding-bottom: 70px;
+
+  @include mobile {
+    padding-top: 110px;
+    padding-bottom: 35px;
+  }
+
+  @include desktop {
+    min-height: 55vh !important;
+  }
+
+  &__container {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.1), 3.5rem);
+    margin-bottom: 0.5rem;
+
+    span {
+      color: $color-primary;
+    }
+  }
+  &__description {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+
+    @media (min-width: 1024px) {
+      font-size: 1.25rem;
+    }
+  }
+  /* Posts section */
+  &__swiper {
+    margin-top: 2rem;
+    display: flex !important;
+    height: 100% !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .posts-wrapper {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      .posts-wrapper__card {
+        min-width: 300px !important;
+        height: 300px !important;
+        background-color: $color-black;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease-in;
+        position: relative;
+        overflow: hidden;
+        @media (max-width: 600px) {
+          height: 250px !important;
+        }
+        &--meta {
+          padding: 0 0 10px 0;
+          h2 {
+            a {
+              font-size: 1.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+              height: 100%;
+              width: 100%;
+              padding: 1rem;
+              color: $color-white;
+              text-decoration: none;
+              transition: color 0.3s ease-in;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 2rem;
+            }
+          }
+        }
+
+        &:hover {
+          .posts-wrapper__card--meta {
+            a {
+              color: $color-secondary;
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 40px;
+      rect {
+        fill: $color-primary !important;
+        transition: fill 0.35s ease-in-out;
+
+        &:hover {
+          fill: $color-secondary !important;
+        }
+      }
+    }
+  }
+}

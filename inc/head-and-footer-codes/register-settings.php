@@ -8,6 +8,8 @@
  * 
  * @since 1.0.0
  */
+if( !defined( 'ABSPATH' )) exit;
+
 function awc_head_and_footer_code_settings() {
     // Register settings for the head code.
     register_setting('awc_head_and_footer_code_settings', 'awc_head_code');

@@ -1,0 +1,41 @@
+//--------------------------------------------------------------
+// Option Page Header Style styles
+//--------------------------------------------------------------
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.alphanews-options-header {
+  background: #0b5698;
+  color: #ffffff;
+  padding: 32px;
+  margin: 20px 0;
+  border-radius: 10px;
+
+  h1 {
+    color: #fff;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    a {
+      background-color: #fff;
+      color: #0b5698;
+      text-decoration: none;
+      border-radius: 30px;
+      border: 1px solid #fff;
+      padding: 0.5rem 1.25rem;
+      white-space: nowrap;
+      transition: background-color 0.3s ease-in;
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}

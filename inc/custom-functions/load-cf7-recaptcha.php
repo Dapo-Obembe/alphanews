@@ -2,24 +2,7 @@
 /**
  * Load the recaptcha for CF7 only on the contact page.
  */
-
- // First, disable reCAPTCHA loading by default
-// add_filter( 'wpcf7_load_js', '__return_false' );
-// add_filter( 'wpcf7_load_css', '__return_false' );
-
-// Then, re-enable only on the contact page
-// function conditionally_load_cf7_recaptcha() {
-//     if ( is_page( 'contact' ) ) {
-//         if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
-//             wpcf7_enqueue_scripts();
-//         }
-//         if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
-//             wpcf7_enqueue_styles();
-//         }
-//     }
-// }
-// add_action( 'wp_enqueue_scripts', 'conditionally_load_cf7_recaptcha' );
-
+if( !defined( 'ABSPATH' )) exit;
 
 add_action('wp_print_scripts', 'remove_recaptcha_except_contact_page', 100);
 

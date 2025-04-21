@@ -9,8 +9,6 @@
  * @package AlphaWebConsult
  */
 
-
-
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,8 +19,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   	<!-- Preload the fonts -->
+	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/geist-v1-latin/geist-v1-latin-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/geist-v1-latin/geist-v1-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+	<!-- Load the font styles -->
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/geist-v1-latin/geist-font.css" media="print" onload="this.media='all'">
+
+	<!-- Fallback for non-JS users -->
+	<noscript>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/geist-v1-latin/geist-font.css">
+	</noscript>
 
 	<?php wp_head(); ?>
 </head>
@@ -33,45 +44,19 @@
 
 	<a class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'alphanews' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-
-		<div class="container">
-
-			<div class="site-header__wrapper">
-
-				<!-- Logo -->
-				<div class="site-header__branding">
-					<?php if ( has_custom_logo() ) : ?>
-						<?php the_custom_logo(); ?>
-					<?php else : ?>
-						<h1 class="site-header__title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-						</h1>
-					<?php endif; ?>
-				</div>
-
-				<!-- Desktop Nav -->
-				<nav class="site-header__navigation" role="navigation">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary',
-							'menu_id'        => 'primary-menu',
-							'menu_class'     => 'site-header__menu',
-							'container'      => false,
-						)
-					);
-					?>
-				</nav>
-
-				<!-- Search Form -->
-				<?php // get_template_part( 'template-parts/components/search-form' ); ?>
-
-				<!-- Mobile Nav -->
-				<?php get_template_part( 'template-parts/components/mobile-nav' ); ?>
-
-			</div>
-
-		</div>
-
-	</header>
+	<?php 
+		// Get the layout from the backend.
+		$header_layout = get_field('header_layout', 'option') ?: 'header_a';
+		// Render the templates based on the layout picked/selected.
+		switch ($header_layout) {
+			case 'header-a':
+				get_template_part('template-parts/header-layouts/header-a');
+				break;
+			case 'header-b':
+				get_template_part('template-parts/header-layouts/header-b');
+				break;
+			default:
+				get_template_part('template-parts/header-layouts/header-a'); // fallback if no specific layout was choosen.
+				break;
+		}
+	?>

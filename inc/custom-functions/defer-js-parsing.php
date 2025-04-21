@@ -8,6 +8,8 @@
  * 
  * @since 1.0.0
  */
+if( !defined( 'ABSPATH' )) exit;
+
 function defer_parsing_of_js( $url ) {
         if ( is_user_logged_in() ) return $url; 
         if ( FALSE === strpos( $url, '.js' ) ) return $url;

@@ -13,9 +13,9 @@
  */
 if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_page( array(
-		'page_title'  => 'Site Settings', // Title displayed on the options page.
-		'menu_title'  => 'Site Settings', // Title displayed in the WordPress admin menu.
-		'menu_slug'   => 'site-settings', // The slug for the menu item.
+		'page_title'  => 'Theme Settings', // Title displayed on the options page.
+		'menu_title'  => 'Theme Settings', // Title displayed in the WordPress admin menu.
+		'menu_slug'   => 'theme-settings', // The slug for the menu item.
 		'capability'  => 'manage_options', // Capability required to access the page.
 		'parent_slug' => 'themes.php',    // Places it under the Appearance tab.
 		'redirect'    => false,         // Position in the admin menu (default: bottom).
@@ -95,6 +95,3 @@ function register_acf_blocks() {
     }
 }
 add_action( 'acf/init', 'register_acf_blocks' );
-
-
-

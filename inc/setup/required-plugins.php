@@ -2,6 +2,8 @@
 /**
  * Require TGM Plugin Activation library
  */
+if( !defined( 'ABSPATH' )) exit;
+
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'awc_register_required_plugins');

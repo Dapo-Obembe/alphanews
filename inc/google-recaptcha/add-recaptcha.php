@@ -2,6 +2,7 @@
 /**
  * Add the appropriate reCAPTCHA widget or token to the comment form.
  */
+if( !defined( 'ABSPATH' )) exit;
 
 /**
  * Adds recaptcha checkbox in the post comment form.

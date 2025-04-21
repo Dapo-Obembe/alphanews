@@ -19,11 +19,6 @@ function setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/**
-	 * Adds support for Block styles.
-	 */
-	add_theme_support( "wp-block-styles" );
-
 	add_theme_support( 'automatic-feed-links' );
 	/**
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -106,19 +101,23 @@ function setup() {
 
 	// Gutenberg editor styles support.
 	add_theme_support( 'editor-styles' );
+	add_theme_support( 'wp-block-styles' );
 
-	$manifest_path = get_theme_file_path( '/dist/manifest.json' );
-	if ( file_exists( $manifest_path ) ) {
-		// Get manifest content.
-		$manifest_content = file_get_contents( $manifest_path ); // phpcs:ignore
-		$manifest         = json_decode( $manifest_content, true );
 
-		// Theme global styles.
-		// TO DO: Extract the most necessary global styles and place them in a separate file.
-		// Then, replace this with the path to that new file, instead of including all global styles.
-		if ( isset( $manifest['main.css'] ) ) {
-			add_editor_style( $manifest['main.css'] );
-		}
+	$admin_css_path = '/dist/css/admin.css';
+	if (file_exists(get_theme_file_path($admin_css_path))) {
+		// For editor
+		add_editor_style($admin_css_path);
+		
+		// For admin head
+		add_action('admin_enqueue_scripts', function() use ($admin_css_path) {
+			wp_enqueue_style(
+				'alphaweb-admin-css',
+				get_theme_file_uri($admin_css_path),
+				[],
+				filemtime(get_theme_file_path($admin_css_path))
+			);
+		});
 	}
 }
 add_action( 'after_setup_theme', 'setup' );

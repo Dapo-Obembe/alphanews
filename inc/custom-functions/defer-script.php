@@ -2,6 +2,7 @@
 /**
  * Defer jQuery/Scripts
  */
+if( !defined( 'ABSPATH' )) exit;
 
 function defer_jquery_loading() {
     if (!is_admin()) {

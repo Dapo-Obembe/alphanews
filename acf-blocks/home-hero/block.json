@@ -1,0 +1,23 @@
+{
+	"name": "acf/home-hero",
+	"title": "Home Hero",
+	"description": "Display Custom Hero Section on your Homepage",
+	"category": "alphanews-blocks",
+	"icon": "welcome-widgets-menus",
+	"style": "acf-home-hero-style",
+	"editorStyle": "acf-home-hero-style",
+	"script": "acf-home-hero-script",
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "home-hero.php",
+		"postThumbnail": "hero_preview"
+	},
+	"supports": {
+		"align": true,
+		"anchor": true,
+		"spacing": {
+			"padding": ["top", "bottom"],
+			"margin": ["top", "bottom"]
+		}
+	}
+}

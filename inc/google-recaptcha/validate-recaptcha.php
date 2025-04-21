@@ -7,6 +7,8 @@
  * 
  * @since 1.0.0
  */
+if( !defined( 'ABSPATH' )) exit;
+
 function validate_recaptcha_on_comment_submission($commentdata) {
     
     // Skip validation for admins

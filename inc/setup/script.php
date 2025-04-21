@@ -5,7 +5,7 @@
 
 if( !defined( 'ABSPATH' )) exit;
 
-function theme_enqueue_assets() {
+function alphanews_theme_enqueue_assets() {
     // Check if manifest file exists.
     $manifest_path = get_theme_file_path( '/dist/manifest.json' );
     if ( ! file_exists( $manifest_path ) ) {
@@ -25,16 +25,21 @@ function theme_enqueue_assets() {
         error_log('Manifest is empty or not decoded properly');
         return;
     }
-
-    // Fonts
-    wp_enqueue_style( 'poppins-font', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap', array(), null, 'all' );
-
-    // Enqueue Bootstrap Icons CSS.
-    wp_enqueue_style( 'bootstrap-icons', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css', array(), '1.10.3' );
     
    
     if ( isset( $manifest['css/main.css'] ) ) {
         wp_enqueue_style( 'theme-styles', get_theme_file_uri( $manifest['css/main.css'] ), array(), $version, 'all' );
+
+        if ( function_exists('get_theme_color') ) {
+            $color_css = ":root {
+                --alphanews-color-primary: " . get_theme_color('primary_color') . ";
+                --alphanews-color-secondary: " . get_theme_color('secondary_color') . ";
+                --alphanews-color-accent: " . get_theme_color('accent_color') . ";
+            }";
+
+            wp_add_inline_style('theme-styles', $color_css);
+        }
+
     }
 
     // Theme scripts.
@@ -75,7 +80,7 @@ function theme_enqueue_assets() {
     }
     
     // ARCHIVE Post Page.
-    if ( is_home( 'post' ) || is_post_type_archive( 'event' ) ) {
+    if ( is_home( ) || is_post_type_archive( 'event' ) ) {
         if ( isset( $manifest['css/archive-blog.css'] ) ) {
             wp_enqueue_style( 'archive-blog-styles', get_theme_file_uri( $manifest['css/archive-blog.css'] ), array(), $version, 'all' );
         } 
@@ -95,7 +100,7 @@ function theme_enqueue_assets() {
     }
 
     // Text-Page Styles.
-    if ( in_array( 'page-template-text-page-template', get_body_class( )) ) {
+    if ( is_page_template( 'page-template-text-page-template' ) ) {
         
         if ( isset( $manifest['css/text-page.css'] ) ) {
             wp_enqueue_style( 'text-page-styles', get_theme_file_uri( $manifest['css/text-page.css'] ), array(), $version, 'all' );
@@ -119,7 +124,8 @@ function theme_enqueue_assets() {
     }
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'alphanews_theme_enqueue_assets' );
+
 
 function enqueue_recaptcha_settings_script($hook) {
     // Check if manifest file exists.

@@ -9,6 +9,8 @@
  * @since 1.0.0
  * 
  */
+if( !defined( 'ABSPATH' )) exit;
+
 /* Hide WP version strings from scripts and styles
 * @return {string} $src
 * @filter script_loader_src

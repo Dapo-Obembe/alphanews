@@ -2,6 +2,8 @@
 /**
  * Display admin notices if reCAPTCHA keys are missing based on the selected version.
  */
+if( !defined( 'ABSPATH' )) exit;
+
 add_action('admin_notices', function () {
     $options = get_option('recaptcha_settings');
     $selected_version = $options['recaptcha_version'] ?? 'v2'; // Default to v2 if not set

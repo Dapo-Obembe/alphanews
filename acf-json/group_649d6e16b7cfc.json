@@ -3,6 +3,125 @@
     "title": "Theme Options",
     "fields": [
         {
+            "key": "field_680515f8f581f",
+            "label": "General",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 1,
+            "selected": 0
+        },
+        {
+            "key": "field_68051679f5820",
+            "label": "Site Logo",
+            "name": "site_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "webp or avif image formats are recommended for better performance.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_680516caf5821",
+            "label": "Website Colors",
+            "name": "website_colors",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "it is advisable to use 3 colors on your website. You can enter the color code below, save and see how it looks on the frontend.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_6805260b903b7",
+                    "label": "Primary Color",
+                    "name": "primary_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 1,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_68052709c3113",
+                    "label": "Secondary Color",
+                    "name": "secondary_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 1,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                },
+                {
+                    "key": "field_68052719c3114",
+                    "label": "Accent Color",
+                    "name": "accent_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 1,
+                    "return_format": "string",
+                    "allow_in_bindings": 0
+                }
+            ]
+        },
+        {
             "key": "field_677ae8ec9bd4f",
             "label": "Header",
             "name": "",
@@ -21,12 +140,12 @@
             "selected": 0
         },
         {
-            "key": "field_6793a8b574c54",
-            "label": "Join Us Button",
-            "name": "join_us_button",
+            "key": "field_6805233f80294",
+            "label": "Header Layout",
+            "name": "header_layout",
             "aria-label": "",
-            "type": "link",
-            "instructions": "",
+            "type": "select",
+            "instructions": "Select a layout for your header. <a href=\"#\">See demos here<\/a>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,23 +153,18 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
-        },
-        {
-            "key": "field_6793a8ca74c55",
-            "label": "Contact Us Button",
-            "name": "contact_us_button",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
+            "choices": {
+                "header_a": "Header Layout A",
+                "header_b": "Header Layout B"
             },
-            "return_format": "array"
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 1,
+            "placeholder": ""
         },
         {
             "key": "field_649d6e17f38e6",
@@ -69,26 +183,6 @@
             "placement": "top",
             "endpoint": 0,
             "selected": 0
-        },
-        {
-            "key": "field_6589cd4d1f882",
-            "label": "Footer Subscribe Heading",
-            "name": "footer_subscribe_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_649d6eb9f38e7",
@@ -338,7 +432,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_677fb15dc24fa",
@@ -421,8 +516,8 @@
             "append": ""
         },
         {
-            "key": "field_679e2983fcca1",
-            "label": "Events",
+            "key": "field_6805293bfacc9",
+            "label": "Advanced Settings",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -435,14 +530,15 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
-            "key": "field_679e298ffcca2",
-            "label": "Event Archive Title",
-            "name": "event_archive_title",
+            "key": "field_68052956facca",
+            "label": "Enable Advanced Settings",
+            "name": "enable_advanced_settings",
             "aria-label": "",
-            "type": "text",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -451,31 +547,180 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
         },
         {
-            "key": "field_679e299afcca3",
-            "label": "Event Archive Description",
-            "name": "event_archive_description",
+            "key": "field_6805298dfaccb",
+            "label": "Add Custom CSS",
+            "name": "add_custom_css",
             "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
+            "type": "repeater",
+            "instructions": "Add custom CSS styles to your website.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68052956facca",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Custom CSS",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68052ab4facce",
+                    "label": "Custom CSS",
+                    "name": "custom_css",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 10,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_6805298dfaccb"
+                },
+                {
+                    "key": "field_68052ad0faccf",
+                    "label": "Choose Pages",
+                    "name": "choose_pages",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Choose page(s) to apply this CSS to. This avoid the CSS loading on pages it is not needed, hence a faster website.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_6805298dfaccb"
+                }
+            ]
+        },
+        {
+            "key": "field_68052b8cfacd0",
+            "label": "Add Custom JAVASCRIPT",
+            "name": "add_custom_javascript",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add custom CSS styles to your website.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68052956facca",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Custom JS",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68052b8cfacd5",
+                    "label": "Custom JS",
+                    "name": "custom_js",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 10,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_68052b8cfacd0"
+                },
+                {
+                    "key": "field_68052b8cfacd6",
+                    "label": "Choose Pages",
+                    "name": "choose_pages",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Choose page(s) to apply this script to. This avoid the script loading on pages it is not needed, hence a faster website.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "object",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_68052b8cfacd0"
+                }
+            ]
         }
     ],
     "location": [
@@ -483,7 +728,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "site-settings"
+                "value": "theme-settings"
             }
         ]
     ],
@@ -492,9 +737,24 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738418603
+    "modified": 1745169809
 }

@@ -5,8 +5,8 @@
 //-----------------------------------------
 // Colors
 //-----------------------------------------
-$color-primary: #1a1f2b;
-$color-secondary: #f5f7fa;
+$color-primary: var(--alphanews-color-primary);
+$color-secondary: var(--alphanews-color-secondary);
 $color-accent: #ffc857;
 $color-highlight: #3a86ff;
 $color-success: #07592b;
@@ -35,7 +35,7 @@ $desktop: 1650px;
 //-----------------------------------------
 // Typography
 //-----------------------------------------
-$font-family-base: "Poppins", serif;
+$font-family-base: "Geist";
 $font-size-base: 1rem; // typically 16px
 $font-size-h1: 2.5rem;
 $font-size-h2: 2rem;

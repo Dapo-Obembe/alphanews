@@ -2,12 +2,15 @@
 /**
  * Create option page and menu to add add tags to <head>.
  * 
- * @package alpha_web_consult
+ * @package AlphaWebConsult
  * 
  * @author Dapo Obembe
  * 
  * @since 1.0.0
  */
+
+if( !defined( 'ABSPATH' )) exit;
+
 function awc_head_and_footer_code_menu() {
     add_menu_page(
         'awc Head Code',            // Page title
@@ -27,7 +30,7 @@ function awc_head_and_footer_code_page() {
         <h1>Add Codes To Your Site's Head & Footer</h1>
         <div class="notice notice-info">
             <p><strong>Warning:</strong> Only paste code you trust. Adding malicious or unverified scripts can harm your site.</p>
-            <p>If you are not sure, talk to Dapo Obembe on WhatsApp (+2348151244131)</p>
+            <p>If you are not sure, talk to Dapo Obembe on WhatsApp (+2348134107514)</p>
         </div>
         <form method="post" action="options.php">
             <?php
